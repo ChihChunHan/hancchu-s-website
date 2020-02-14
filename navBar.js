@@ -65,7 +65,6 @@ $(document).ready(() => {
     }
 
     function showMenuIcon_lg() {
-        $('.menuIcon-sm').hide();
         $('.menuIcon').show();
         $('.menuIcon').mouseenter(navBarShow);
         $('.menuIcon').click(navBarShow);
@@ -75,7 +74,6 @@ $(document).ready(() => {
             $('.menuIcon').fadeIn();
             $('.menuIcon').off();
             setTimeout(()=>{
-                $('.navBar').addClass('navBarHide')
                 $('.menuIcon').mouseenter(navBarShow);
                 $('.menuIcon').click(navBarShow);
             },1000)
@@ -87,7 +85,6 @@ $(document).ready(() => {
         $('.menuIcon').hide();
         $('.menuIcon-sm').show();
         $('.menuIcon-sm').click(() => {
-            console.log(1);
             $('.navBar').toggleClass('navBarHide');
             $('.menuIcon-sm').find('img')[0].src = (show == 0) ? 'images/close-24px.svg' : 'images/menu-24px.svg';
             show = (show === 0) ? 1 : 0
