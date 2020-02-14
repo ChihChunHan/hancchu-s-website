@@ -65,6 +65,7 @@ $(document).ready(() => {
     }
 
     function showMenuIcon_lg() {
+        $('.menuIcon-sm').hide();
         $('.menuIcon').show();
         $('.menuIcon').mouseenter(navBarShow);
         $('.menuIcon').click(navBarShow);
