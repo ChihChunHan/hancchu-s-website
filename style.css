@@ -1,0 +1,127 @@
+html,
+body {
+    height: 100vh;
+}
+
+/* 隱藏scoll-bar */
+html {
+    overflow: -moz-hidden-unscrollable;
+    height: 100%;
+}
+
+body::-webkit-scrollbar {
+    display: none;
+}
+
+body {
+    -ms-overflow-style: none;
+    height: 100%;
+	width: calc(100vw + 18px);
+	overflow: auto;
+}
+/* --- */
+
+.main {
+    position: absolute;
+    transition: 1s;
+    left: 0;
+}
+.mainNavBarShow {
+    left: 25vw;
+}
+
+.navBar {
+    position: fixed;
+    width: 25vw;
+    top: 0;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    transition: 1s;
+    z-index: 1000;
+}
+.navBar_lg {
+    left: -25vw;
+}
+.navBar_sm {
+    width: 100vw;
+}
+.navBarShow {
+    left: 0;
+}
+.navBarHide {
+    display: none;
+}
+
+.menuIcon {
+    position: fixed;
+    top: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.menuIcon-sm {
+    position: fixed;
+    top: 0;
+    right: 0;
+    z-index: 9999;
+    cursor: pointer;
+}
+
+.tail {
+    pointer-events:none;
+    width: 30px;
+    height: 30px;
+    border: 2px solid #333;
+    border-radius: 50%;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    transition: .07s;
+}
+
+
+/* RWD */
+/* Small devices (landscape phones, 576px and up) */
+/* @media (min-width: 576px) { ... } */
+
+/* Medium devices (tablets, 768px and up) */
+/* @media (min-width: 768px) { ... } */
+
+/* Large devices (desktops, 992px and up) */
+@media (max-width: 992px) { 
+    /* .closeIcon {
+        display: block;
+    }
+    .mainIcon {
+        display: none;
+    }
+    .navBar {
+        width: 100vw;
+    }
+     */
+}
+
+@media (min-width: 992px) {
+    /* .closeIcon {
+        display: none;
+    }
+    .mainIcon {
+        display: block;
+    }
+    .navBar {
+        width: 25vw;
+    } */
+}
+
+/* Extra large devices (large desktops, 1200px and up) */
+/* @media (min-width: 1200px) { ... } */
+
+.item {
+    font-size: 7rem;
+}
+
