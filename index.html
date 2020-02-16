@@ -4,23 +4,30 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Noto+Serif+TC:200,300,400,500,600,700,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        * {
+            font-family: 'Noto Serif TC', serif;
+            /* letter-spacing: 0.3rem; */
+            /* line-height: 1.7rem; */
+            font-weight: 500;
+        }
+    </style>
 </head>
 <body>
-    <!-- <div class="closeIcon text-dark">
-        <img src="images/close-24px.svg" alt="">
-    </div> -->
+    <div class="background"></div>
+    <!-- menuicon-sm -->
     <div class="menuIcon-sm text-dark">
         <img src="images/menu-24px.svg" alt="">
     </div>
+    <!-- navBar -->
     <div class="navBar h-100 bg-dark text-light">
-        <ul class="">
-            <li>top</li>
-            <li>intro</li>
-            <li>works</li>
-            <li>contacts</li>
-        </ul>
+        <div class="navBarItem">TOP</div>
+        <div class="navBarItem">INTRO</div>
+        <div class="navBarItem">WORKS</div>
+        <div class="navBarItem">CONTACTS</div>
     </div>
 
     <div class="container-fluid h-100 main">
@@ -37,24 +44,56 @@
                 </div>
             </div>
         </div>
-        <div class="container h-100">intro</div>
-        <div class="container h-100 bg-info">works
-            <div class="container-fluid d-flex flex-column justify-content-center align-items-center">
-                <div class="item">web</div>
-                <div class="item">graphic</div>
-                <div class="item">3D</div>
-                <div class="item">cooking</div>
+        <div class="container h-100">
+            intro
+            <div class="col">
+                - 雲科大創設系畢業，畢業製作有幸受張岑瑤教授指導，畢業後與服役中的時間都以自由接案的方式工作。
+                - 大學所學的設計專業著重在跨領域工作的設計訓練，畢業製作研究體驗設計。我的設計思維偏好活絡與多元思考，喜歡出點子。
+                - 活動公司擔任設計主任一職，帶領4位設計同仁消化每年約300件設計案，包括校園演唱會、企業尾牙、萬人電音活動。並建置設計流程SOP，大型專案跨部門溝通，落實案件與部門管理。
+                - 泰山職訓中心－前端網頁設計開發108年度第二期：第一名結訓
             </div>
         </div>
+        <div class="container h-100">
+            <div class="container-fluid d-flex flex-column justify-content-center align-items-center">
+                
+                <a href="#c1" class="workBlock text-reset text-decoration-none showWorkBox">
+                    <div class="zoom">
+                        <div id="c1" class="indexTop indexHide">web</div>
+                        <div class="content container bg-info">
+                            <div class="txt">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo, nobis assumenda. Incidunt reiciendis, aut facere sapiente dolor unde placeat laudantium reprehenderit sed in possimus fugit nam iusto doloribus doloremque commodi.</div>
+                            <div class="a">click</div>
+                        </div>
+                        <div class="indexBotton indexHide">web</div>
+                    </div>
+                </a>
+                <a href="#c2" class="workBlock text-reset text-decoration-none showWorkBox">
+                    <div class="zoom" >
+                        <div id="c2" class="indexTop">web2</div>
+                        <div class="content container">
+                            <div class="col">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo, nobis assumenda. Incidunt reiciendis, aut facere sapiente dolor unde placeat laudantium reprehenderit sed in possimus fugit nam iusto doloribus doloremque commodi.</div>
+                        </div>
+                        <div class="indexBotton">web2</div>
+                    </div>
+                </a>
+                <!-- <div class="item">graphic</div>
+                <div class="item">3D</div>
+                <div class="item">cooking</div> -->
+            </div>
+        </div>
+        <div class="container h-100">contacts</div>
         <div class="container h-100">contacts</div>
     </div>
 
 
-    <div class="tail"></div>
+    <!-- <div class="tail"></div> -->
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
+    <!--scollpage fullyResponsiveNavigationBY_JAN_CZIZIKOW -->
+    <script src="jquery.easing.min.js"></script>
+    <script src="scollpage.js"></script>
+
     <script src="navBar.js"></script>
 </body>
 </html>

@@ -4,15 +4,14 @@
 // })
 
 // rwd navBar
-
 let show = 0;
 $(document).ready(() => {
-    
+
     //navbar init
 
     let width = ($(window).width() > 992) ? "lg" : "sm";
     $('.closeIcon').hide();
-    
+
     if (width == "lg") {
         $('.navBar').addClass('navBar_lg');
         showMenuIcon_lg()
@@ -32,7 +31,7 @@ $(document).ready(() => {
             $('.navBar').toggleClass('navBar_lg');
             $('.navBar').toggleClass('navBar_sm')
             $('.menuIcon-sm').find('img')[0].src = (show == 1) ? 'images/close-24px.svg' : 'images/menu-24px.svg';
-            if(show == 0)$('.navBar').addClass('navBarHide')
+            if (show == 0) $('.navBar').addClass('navBarHide')
             showMenuIcon_sm()
             width = 'sm';
         }
@@ -74,10 +73,10 @@ $(document).ready(() => {
             $('.main').removeClass('mainNavBarShow');
             $('.menuIcon').fadeIn();
             $('.menuIcon').off();
-            setTimeout(()=>{
+            setTimeout(() => {
                 $('.menuIcon').mouseenter(navBarShow);
                 $('.menuIcon').click(navBarShow);
-            },1000)
+            }, 1000)
             show = (show == 0) ? 1 : 0
         })
     }
@@ -94,4 +93,73 @@ $(document).ready(() => {
 
 })
 
+//navbar item transition
+// $(document).ready(()=>{
+//     let $NBI = $('.nacBarItem')
+//     $NBI.hover(()=>{
+//         $('.navBarItem::before').css('width','100%')
+//     })
+// })
 
+
+// work list
+let workList = []
+$(document).ready(() => {
+    for (let i = 0; i < $('.showWorkBox').length; i++) {
+        workList[i] = 0;
+        
+        $('.showWorkBox').eq(i).click(() => {
+            let getTop = $('.showWorkBox').eq(i).offset().top;
+
+            indexOpenToggle(i)
+            for (let j = 0; j < workList.length; j++) {
+                if (workList[j] && j != i) {
+                    indexOpenToggle(j)
+                    workList[j] = 0;
+                }
+            }
+            workList[i] = (!workList[i]);
+
+            let windowHeight = $(window).height()
+            let h80vh = windowHeight * 0.8
+
+            if (!workList[i]) {
+                $('html, body').stop().animate({
+                    scrollTop: getTop - h80vh / 2
+                }, 500, 'easeInOutQuad',()=>{
+                    $('html').css('overflow','auto');
+                    console.log('unlock');
+                });
+                
+            } else {
+                $('html, body').stop().animate({
+                    scrollTop: getTop
+                }, 500, 'easeInOutQuad',()=>{
+                    $('html').css('overflow','hidden');
+                    console.log('lock');
+                    
+                });
+                
+            }
+            console.log('scoll');
+
+            console.log('toggle');
+            console.log(workList);
+        });
+
+        function indexOpenToggle(index) {
+            $('.workBlock').eq(index).toggleClass('workBlockOpen')
+            $('.zoom').eq(index).toggleClass('zoomOpen')
+            $('.content').eq(index).toggleClass('contentOpen')
+            // $('.indexTop').eq(i).toggleClass('indexTopHide')
+            // $('.indexBotton').eq(i).toggleClass('indexBottonHide')
+        }
+
+        $('.content').click((e) => {
+            e.preventDefault();
+            e.stopPropagation();
+            console.log('stop');
+        })
+    }
+
+})
