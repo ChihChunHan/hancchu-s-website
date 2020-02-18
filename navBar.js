@@ -107,7 +107,7 @@ let workList = []
 $(document).ready(() => {
     for (let i = 0; i < $('.showWorkBox').length; i++) {
         workList[i] = 0;
-        
+
         $('.showWorkBox').eq(i).click(() => {
             let getTop = $('.showWorkBox').eq(i).offset().top;
 
@@ -151,6 +151,9 @@ $(document).ready(() => {
             $('.workBlock').eq(index).toggleClass('workBlockOpen')
             $('.zoom').eq(index).toggleClass('zoomOpen')
             $('.content').eq(index).toggleClass('contentOpen')
+            $('.line').toggleClass('lineOpen')
+            $('.workIndexTitle').toggleClass('workIndexTitleHide')
+            $('.marquee').toggleClass('marqueeShow')
             // $('.indexTop').eq(i).toggleClass('indexTopHide')
             // $('.indexBotton').eq(i).toggleClass('indexBottonHide')
         }
