@@ -49,10 +49,12 @@ body {
 }
 
 .background {
-    /* background: #f6f; */
-    position: fixed;
+    background: #f6f;
+    position: absolute;
+    top: 0;
     width: 100vw;
     height: 100vh;
+    z-index: -99;
 }
 
 
@@ -63,6 +65,13 @@ body {
 }
 .mainNavBarShow {
     left: 25vw;
+}
+
+.top {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: -10;
 }
 
 /* navbar zoom > */
@@ -76,7 +85,7 @@ body {
     justify-content: center;
     align-items: flex-start;
     transition: 1s;
-    z-index: 1000;
+    z-index: 9999;
 }
 .navBar_lg {
     left: -25vw;
@@ -326,4 +335,28 @@ body {
     transition: 1.5s;
     transition-delay: 1s;
 
+}
+
+/* slick */
+.slickUI {
+    width: 50%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    font-size: 1.2rem;
+}
+
+.pre,
+.next {
+    cursor: pointer;
+    color: #000;
+}
+
+.pre:hover,
+.next:hover {
+    color: #aaa;
+}
+
+.slickUIIcon {
+    margin: 10px;
 }

@@ -101,6 +101,33 @@ $(document).ready(() => {
 //     })
 // })
 
+// slick
+$(document).ready(function(){
+    $('.your-class').slick({
+        centerMode: true,
+        centerPadding: '60px',
+        slidesToShow: 3,
+        // slidesToScroll: 3,
+        autoplay: true,
+        autoplaySpeed: 5000,
+        arrows:false,
+        accessibility:false,
+        // focusOnSelect: true,
+        // prevArrow: $('.pre'),
+        // nextArrow: $('.next'),
+    });
+    $('.your-class').on('afterChange',()=>{
+        let id = $('.your-class').slick('slickCurrentSlide');
+        console.log(id);
+        $('#current').text(id+1)
+    })
+    $('.pre').click(()=>{
+        $('.your-class').slick('slickPrev')
+    })
+    $('.next').click(()=>{
+        $('.your-class').slick('slickNext')
+    })
+});
 
 // work list
 let workList = []
@@ -126,20 +153,20 @@ $(document).ready(() => {
             if (!workList[i]) {
                 $('html, body').stop().animate({
                     scrollTop: getTop - h80vh / 2
-                }, 500, 'easeInOutQuad',()=>{
-                    $('html').css('overflow','auto');
+                }, 500, 'easeInOutQuad', () => {
+                    $('html').css('overflow', 'auto');
                     console.log('unlock');
                 });
-                
+
             } else {
                 $('html, body').stop().animate({
                     scrollTop: getTop
-                }, 500, 'easeInOutQuad',()=>{
-                    $('html').css('overflow','hidden');
+                }, 500, 'easeInOutQuad', () => {
+                    $('html').css('overflow', 'hidden');
                     console.log('lock');
-                    
+
                 });
-                
+
             }
             console.log('scoll');
 
@@ -154,6 +181,7 @@ $(document).ready(() => {
             $('.line').toggleClass('lineOpen')
             $('.workIndexTitle').toggleClass('workIndexTitleHide')
             $('.marquee').toggleClass('marqueeShow')
+            // $('.your-class').toggle()
             // $('.indexTop').eq(i).toggleClass('indexTopHide')
             // $('.indexBotton').eq(i).toggleClass('indexBottonHide')
         }

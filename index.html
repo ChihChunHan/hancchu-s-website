@@ -1,12 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
-    <link href="https://fonts.googleapis.com/css?family=Noto+Serif+TC:200,300,400,500,600,700,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
+        integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Noto+Serif+TC:200,300,400,500,600,700,900&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="style.css">
+
+    <!-- slick -->
+    <link rel="stylesheet" type="text/css" href="slick/slick.css" />
+    <link rel="stylesheet" type="text/css" href="slick/slick-theme.css" />
     <style>
         * {
             font-family: 'Noto Serif TC', serif;
@@ -16,6 +23,7 @@
         }
     </style>
 </head>
+
 <body>
     <div class="background"></div>
     <!-- menuicon-sm -->
@@ -30,11 +38,12 @@
         <div class="navBarItem">CONTACTS</div>
     </div>
 
-    <div class="h-100 main">
+    <div class="h-100 main w-100">
         <div class="menuIcon">
             <img src="images/menu-24px.svg" alt="">
         </div>
-        <div class="container-fluid bg-dark text-light h-100 d-flex flex-column align-items-center justify-content-center">
+        <div
+            class="top container-fluid bg-dark text-light h-100 d-flex flex-column align-items-center justify-content-center">
             <div class="row bg-danger">
                 <div class="col"></div>
                 <div class="row">
@@ -45,22 +54,46 @@
             </div>
             <div class="row">
                 <div class="col m-5">
-                    <div class="txt">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Asperiores quae delectus deserunt. Labore dolorum officiis similique, nesciunt ducimus error corporis quidem placeat, quibusdam molestiae distinctio magnam sequi totam ipsum eaque.</div>
+                    <div class="txt">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Asperiores quae delectus
+                        deserunt. Labore dolorum officiis similique, nesciunt ducimus error corporis quidem placeat,
+                        quibusdam molestiae distinctio magnam sequi totam ipsum eaque.</div>
                 </div>
             </div>
         </div>
-        <div class="container h-100">
-            intro
-            <div class="col">
-                - 雲科大創設系畢業，畢業製作有幸受張岑瑤教授指導，畢業後與服役中的時間都以自由接案的方式工作。
-                - 大學所學的設計專業著重在跨領域工作的設計訓練，畢業製作研究體驗設計。我的設計思維偏好活絡與多元思考，喜歡出點子。
-                - 活動公司擔任設計主任一職，帶領4位設計同仁消化每年約300件設計案，包括校園演唱會、企業尾牙、萬人電音活動。並建置設計流程SOP，大型專案跨部門溝通，落實案件與部門管理。
-                - 泰山職訓中心－前端網頁設計開發108年度第二期：第一名結訓
+        <div class="top-bg h-100"></div>
+        <div class="intro h-100 bg-white">
+            <div class="container">
+                intro
+                <div class="col">
+                    - 雲科大創設系畢業，畢業製作有幸受張岑瑤教授指導，畢業後與服役中的時間都以自由接案的方式工作。
+                    - 大學所學的設計專業著重在跨領域工作的設計訓練，畢業製作研究體驗設計。我的設計思維偏好活絡與多元思考，喜歡出點子。
+                    - 活動公司擔任設計主任一職，帶領4位設計同仁消化每年約300件設計案，包括校園演唱會、企業尾牙、萬人電音活動。並建置設計流程SOP，大型專案跨部門溝通，落實案件與部門管理。
+                    - 泰山職訓中心－前端網頁設計開發108年度第二期：第一名結訓
+                </div>
+                <div class="your-class">
+                    <div>
+                        <img src="https://picsum.photos/300/300/?random=1">
+                        <div class="txt">Lorem ipsum dolor sit.</div>
+                    </div>
+                    <div><img src="https://picsum.photos/300/300/?random=2"></div>
+                    <div><img src="https://picsum.photos/300/300/?random=3"></div>
+                    <div><img src="https://picsum.photos/300/300/?random=4"></div>
+                    <div><img src="https://picsum.photos/300/300/?random=5"></div>
+                    <div><img src="https://picsum.photos/300/300/?random=6"></div>
+                </div>
+                <div class="slickUI mx-auto mt-3">
+                    <span class="pre">←</span>
+                    <div>
+                        <span class="slickUIIcon" id="current">1</span>
+                        <span class="slickUIIcon">⎪</span>
+                        <span class="slickUIIcon" id='all'> 6 </span>
+                    </div>
+                    <span class="next">→</span>
+                </div>
             </div>
         </div>
-        <div class="container h-100">
+        <div class="workList h-100 bg-white">
             <div class="container-fluid d-flex flex-column justify-content-center align-items-center">
-                
                 <a href="#c1" class="workBlock text-reset text-decoration-none showWorkBox">
                     <div class="zoom">
                         <div id="c1" class="indexTop indexHide">
@@ -76,7 +109,8 @@
                         </div>
                         <div class="content container-fluid">
                             <div class="line lineTop"></div>
-                            <div class="txt container">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo, nobis assumenda. Incidunt reiciendis, aut facere sapiente dolor unde placeat laudantium reprehenderit sed in possimus fugit nam iusto doloribus doloremque commodi.</div>
+                            <div class="txt container">
+                            </div>
                             <div class="line lineBottom"></div>
                         </div>
                         <div class="indexBotton indexHide">
@@ -93,11 +127,13 @@
                     </div>
                 </a>
                 <a href="#c2" class="workBlock text-reset text-decoration-none showWorkBox">
-                    <div class="zoom" >
+                    <div class="zoom">
                         <div id="c2" class="indexTop">Graphic design</div>
                         <div class="content container-fluid">
                             <div class="line lineTop"></div>
-                            <div class="txt container">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo, nobis assumenda. Incidunt reiciendis, aut facere sapiente dolor unde placeat laudantium reprehenderit sed in possimus fugit nam iusto doloribus doloremque commodi.</div>
+                            <div class="txt container">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo,
+                                nobis assumenda. Incidunt reiciendis, aut facere sapiente dolor unde placeat laudantium
+                                reprehenderit sed in possimus fugit nam iusto doloribus doloremque commodi.</div>
                             <div class="line lineBottom"></div>
                         </div>
                         <div class="indexBotton">Graphic design</div>
@@ -108,20 +144,34 @@
                 <div class="item">cooking</div> -->
             </div>
         </div>
-        <div class="container h-100">contacts</div>
-        <div class="container h-100">contacts</div>
+        <div class="h-100 bg-white">
+            <div class="container">
+                contacts
+            </div>
+        </div>
+    </div>
     </div>
 
 
     <!-- <div class="tail"></div> -->
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
-    <!--scollpage fullyResponsiveNavigationBY_JAN_CZIZIKOW -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"
+        integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"
+        integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k"
+        crossorigin="anonymous"></script>
     <script src="jquery.easing.min.js"></script>
+
+    <!-- slick -->
+    <script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+    <script type="text/javascript" src="slick/slick.min.js"></script>
+
+
     <script src="scollpage.js"></script>
 
     <script src="navBar.js"></script>
 </body>
+
 </html>
