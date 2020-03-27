@@ -1,0 +1,79 @@
+.contacts {
+    position: relative;
+}
+
+.contacts .index {
+    position: absolute;
+    top: 0;
+    right: 2rem;
+    font-size: 15rem;
+    line-height: 15rem;
+    font-weight: 500;
+    color: #fff;
+    text-shadow: 1px 0px 0px #000,
+    0px -1px 0px #000,
+    0px 1px 0px #000,
+    -1px 0px 0px #000;
+    opacity: .3;
+    writing-mode: vertical-lr;
+
+}
+
+.contacts .container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.contacts .container .title {
+    color: #fff;
+    background-color: #555;
+    padding: 0 1rem;
+    font-weight: 100;
+    font-size: 1rem;
+    letter-spacing: 2px;
+}
+
+.contacts .container .designer {
+    margin:2rem;
+    padding: 3rem;
+}
+
+.contacts .container .name {
+    letter-spacing: 5px;
+    font-size: 1.5rem;
+    font-weight: 100;
+    display: flex;
+    flex-flow: column;
+    justify-content: space-around;
+}
+
+.contacts .container .chi {
+    padding-top: 9rem;
+    writing-mode: vertical-lr;
+}
+
+
+.contacts .container .eng {
+    padding-bottom: 9rem;
+    font-size: 1rem;
+}
+
+.contacts .container img {
+    width: 100%; 
+}
+
+.contacts .container .email,
+.contacts .container .phone {
+    margin-bottom: 1rem;
+    font-size: 1.2rem;
+    letter-spacing: 2px;
+    font-weight: 300;
+    border-bottom: 1px solid #555;
+}
+
+.contacts .container .right {
+    font-size: 0.8rem;
+    margin-top: 5rem;
+}

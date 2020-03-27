@@ -1,0 +1,46 @@
+.navBar a {
+    text-decoration: none;
+    color: #fff;
+}
+
+.menuIcon {
+    margin-left: 20px;
+}
+
+.menuIcon .box {
+    position: absolute;
+    background-color: #fff;
+    border-right: 1px solid #555;
+    width: 20px;
+    height: 70px;
+    left: 0;
+}
+
+.menuIcon .txt {
+    color: #555;
+    position: absolute;
+    display: block;
+    font-size: 0.6rem;
+    writing-mode: vertical-lr;
+    letter-spacing: 2px;
+    left: 2px;
+
+}
+
+.menuIcon img {
+    position: absolute;
+    left: 1.2rem;
+    transform: scale(1.5);
+    animation: arrow 2s infinite ;
+}
+
+@keyframes arrow{
+    0%{
+        opacity: 0;
+        left: 40px;
+    }   
+    100%{
+        opacity: 1;
+        left: 0px;
+    }
+}

@@ -1,0 +1,215 @@
+.intro {
+    /* height: 325vh; */
+}
+
+.index-1 {
+    position: absolute;
+    /* background: #000; */
+    top: 0;
+    right: 2rem;
+    /* transform: translateX(-100%); */
+    /* transform-origin: left bottom; */
+    font-size: 15rem;
+    line-height: 15rem;
+    font-weight: 500;
+    color: #fff;
+    text-shadow: 1px 0px 0px #000,
+    0px -1px 0px #000,
+    0px 1px 0px #000,
+    -1px 0px 0px #000;
+    opacity: .3;
+    height: 0;
+    /* overflow: hidden; */
+    writing-mode: vertical-lr;
+}
+
+.intro .title {
+    font-size: 5rem;
+    font-weight: 700;
+    position: relative;
+    /* left: 2.5rem; */
+    /* margin-bottom: 1.5rem; */
+    /* margin-top: 5rem; */
+    line-height: 5rem;
+}
+
+.intro .title small{
+    position: absolute;
+    left: 0;
+    top: 0;
+    transform: translate(-100% ,0%);
+    font-size: 2rem;
+    font-weight: 900;
+    color: #fff;
+    text-shadow: 1px 0px 0px #000,
+    0px -1px 0px #000,
+    0px 1px 0px #000,
+    -1px 0px 0px #000;
+    line-height: 0rem;
+
+}
+
+.intro .sub-title{
+    font-size: 1.2rem;
+    font-weight: 500;
+    margin-top: -1.8rem;
+}
+
+.intro .row {
+    margin-bottom: 5rem;
+}
+
+.intro .row:last-of-type {
+    margin-bottom: 0;
+}
+
+.intro .row img {
+    width: 100%;
+    object-fit: cover;
+}
+
+.intro .row .txt {
+    margin-top: 1rem;
+}
+
+.intro .row .card-txt {
+    position: absolute;
+    top: 1rem;
+    left: 0;
+    padding: 15px;
+    background-color: #fff;
+}
+
+/* 3D */
+.intro .row:nth-of-type(3) {
+    text-align: start;
+}
+
+.intro .row:nth-of-type(3) .title {
+    display: inline-block;
+}
+
+.intro .row:nth-of-type(3) .txt {
+    position: absolute;
+    width: 35%;
+    padding: 15px;
+    background-color: #fff;
+    left: 0%;
+    top: 50%;
+    transform: translateX(-75%);
+}
+
+.intro .row:nth-of-type(3) small:nth-last-child(1) {
+    position: absolute;
+    right: 0;
+}
+
+/* web */
+.intro .row:nth-of-type(4) .title {
+    display: block;
+}
+
+.intro .row:nth-of-type(4) .txt {
+    position: absolute;
+    width: 35%;
+    padding: 15px;
+    background-color: #fff;
+    right: 0%;
+    top: 50%;
+    transform: translateX(75%);
+
+}
+
+/* project */
+
+.intro .project .wrap {
+    width: 75%;
+}
+
+.intro .project .col-lg-6:nth-of-type(odd) .txt {
+    font-weight: 100;
+    font-size: 2rem;
+    margin-right: 2rem;
+}
+
+.intro .project .col-lg-6:nth-of-type(even) .txt {
+    margin-top: 1.25rem;
+}
+
+.intro .project .col-lg-6:nth-of-type(even) .txt span {
+    font-size: 0.5rem;
+}
+
+@media (max-width: 992px) { 
+    .intro .project .wrap {
+        width: 90%;
+    }
+    .intro .project .col-lg-6:nth-of-type(odd) {
+        border-left: 2px solid #000;
+    }
+    .intro .project .col-lg-6:nth-of-type(odd) .txt {
+        text-align: start;
+    }
+    .intro .project .col-lg-6:nth-of-type(even) .txt li {
+        list-style: none;
+
+        margin-bottom: 1rem;
+    }
+
+}
+
+@media (min-width: 992px) {
+    .intro .project .wrap {
+        width: 75%;
+    }
+    .intro .project .col-lg-6:nth-of-type(odd) {
+        border-right: 2px solid #000;
+    }
+    .intro .project .col-lg-6:nth-of-type(odd) .txt {
+        text-align: end;
+    }
+    .intro .project .col-lg-6:nth-of-type(even) .txt li {
+        list-style: none;
+
+        margin-bottom: 1.25rem;
+    }
+
+}
+
+.intro .project .col-lg-6:nth-of-type(even) .txt li {
+    display: inline-block;
+    position: relative;
+}
+
+.intro .project .preview {
+    pointer-events:none;
+    position: absolute;
+    bottom: calc(50% - 100px);
+    left: -340px;
+    z-index: 10;
+}
+
+.intro .project .preview .box {
+    width: 306px;
+    height: 206px;
+    border: 3px solid #000;
+    border-radius: 5px;
+    box-shadow: 0px 5px 5px 1px rgb(0,0,0,0.3);
+}
+
+.intro .project .preview .box img {
+    object-fit: cover;
+    width: 300px;
+    height: 200px;
+    border-radius: 3px;
+}
+
+.intro .project .preview .arrow {
+    position: absolute;
+    right: -30px;
+    bottom: calc(50% - 15px);
+    width: 0;
+    height: 30px;
+    border: 15px solid transparent;
+    border-left: 15px solid #000;
+}
