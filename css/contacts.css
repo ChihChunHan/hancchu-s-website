@@ -5,18 +5,7 @@
 .contacts .index {
     position: absolute;
     top: 0;
-    right: 2rem;
-    font-size: 15rem;
-    line-height: 15rem;
-    font-weight: 500;
-    color: #fff;
-    text-shadow: 1px 0px 0px #000,
-    0px -1px 0px #000,
-    0px 1px 0px #000,
-    -1px 0px 0px #000;
-    opacity: .3;
-    writing-mode: vertical-lr;
-
+    right: 0;
 }
 
 .contacts .container {
@@ -30,7 +19,7 @@
     color: #fff;
     background-color: #555;
     padding: 0 1rem;
-    font-weight: 100;
+    font-weight: 500;
     font-size: 1rem;
     letter-spacing: 2px;
 }

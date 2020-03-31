@@ -137,37 +137,53 @@ $(document).ready(() => {
 // side index
 $(document).ready(() => {
     const screenH = window.innerHeight
-    const introBottom = $('#works .blink').offset().top - screenH*0.5
+    const worksTop = $('.workList').offset().top
+    const contactsTop = $('#contacts').offset().top
+
+
+    const intro = $('.sd-intro')
+    const works = $('.workList .index')
     $(document).scroll(() => {
         let scrolled = window.scrollY
-        if (scrolled > screenH && scrolled < introBottom) {
-            $('.index-1').css('position', 'fixed')
-            $('.index-1').css('top', 0)
+
+        if (scrolled < screenH && intro.css('position')!='absolute') intro.css('position', 'absolute') 
+
+        if (scrolled > screenH && intro.css('position')!='fixed') {
+            intro.css({'position':'fixed','top': 0 })
         }
-        else {
-            $('.index-1').css('position', 'absolute')
-            if (scrolled > introBottom) $('.index-1').css('top', introBottom - screenH)
+
+        if (scrolled < worksTop && works.css('position')!='absolute') {
+            works.css('position', 'absolute')
+            intro.show()
         }
+
+
+        if (scrolled > worksTop && works.css('position')!='fixed') {
+            works.css({'position':'fixed','top': 0 })
+            intro.hide()
+        }
+
+        // if (scrolled > contactsTop && works.css('position')!='absolute') works.css('position', 'absolute')
     })
 })
 
 // project preview
-$(document).ready(()=>{
-    $('.preview').hide()
-    const lis = $('.project').find('li')
-    const pres = $('.project').find('.preview')
-    console.log(pres,lis);
+// $(document).ready(()=>{
+//     $('.preview').hide()
+//     const lis = $('.project').find('li')
+//     const pres = $('.project').find('.preview')
+//     console.log(pres,lis);
 
-    for (let i = 0; i < pres.length; i++) {
-        lis.eq(i).hover(()=>{
-            pres.eq(i).show()
-        },()=>{
-            pres.eq(i).hide()
-        })
+//     for (let i = 0; i < pres.length; i++) {
+//         lis.eq(i).hover(()=>{
+//             pres.eq(i).show()
+//         },()=>{
+//             pres.eq(i).hide()
+//         })
         
-    }
+//     }
     
-})
+// })
 
 // work list
 let workList = []
