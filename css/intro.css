@@ -3,6 +3,7 @@
 }
 
 .index {
+    pointer-events: none;
     font-family: 'Montserrat', sans-serif;
     font-style: italic;
     font-weight: 300;
@@ -16,7 +17,7 @@
     opacity: .3;
     height: 0;
     writing-mode: vertical-lr;
-    z-index: 0;
+    z-index: -1;
 }
 
 .sd-intro {

@@ -186,159 +186,159 @@ $(document).ready(() => {
 // })
 
 // work list
-let workList = []
-$(document).ready(() => {
-    for (let i = 0; i < $('.showWorkBox').length; i++) {
-        workList[i] = 0;
-        let thisWorkBox = $('.showWorkBox').eq(i);
-        let getWorkTitle = thisWorkBox.find('.indexBotton .workIndexTitle').text()
-        let getWorkSubTitle = thisWorkBox.find('.indexTop .workIndexTitle div').text()
+// let workList = []
+// $(document).ready(() => {
+//     for (let i = 0; i < $('.showWorkBox').length; i++) {
+//         workList[i] = 0;
+//         let thisWorkBox = $('.showWorkBox').eq(i);
+//         let getWorkTitle = thisWorkBox.find('.indexBotton .workIndexTitle').text()
+//         let getWorkSubTitle = thisWorkBox.find('.indexTop .workIndexTitle div').text()
 
-        console.log(getWorkSubTitle);
-
-
-        thisWorkBox.click(() => { // 點擊按鈕
-            // indexOpenToggle(i)
-            workList[i] = (!workList[i]);
-
-            let windowHeight = $(window).height()
-            let h80vh = windowHeight * 0.8
-            let getTop = thisWorkBox.offset().top;
-
-            if (!workList[i]) {  // close
-                indexClose(i)
-                HUDinit();  // 開啟HUD
-                setTimeout(()=>{
-                    $('.hud').removeClass('hide');
-                },1000)
-
-                if (window.innerWidth > 992) $('.menuIcon').show();  // 開啟menu
-                else $('.menuIcon').show();
-
-                $('.indexTop span').show()
-
-                $('html, body').stop().animate({  // scroll
-                    scrollTop: getTop - h80vh / 2
-                    }, 500, 'easeInOutQuad', () => {
-                        $('html').css('overflow', 'auto');
-                    });
-                for (let i = 0; i < 2; i++) {
-                    thisWorkBox.find('.marquee').eq(i).animate({ 'opacity': "0" }, 1000, () => {
-                        thisWorkBox.find('.marquee').remove()
-                    })
-                }
-
-                $('.works').animate({ 'opacity': 0 }, 1000, () => {
-                    // $('.test').slick('unslick');
-                    // $('.test').remove();
-                    $('.slickBox').remove();
-                })
-
-                nowWorks = '';
-
-            } else {  // open
-                indexOpen(i)
-                clearTimeout(timer);
-                $('.zoom').off('mouseenter').off('mouseleave')  // 關掉HUD事件
-                $('.left').eq(i).removeClass('animated fadeInUp faster').addClass('animated fadeOutUp faster');
-                $('.right').eq(i).removeClass('animated fadeInDown faster').addClass('animated fadeOutDown faster');
-                $('.hud').addClass('hide');
-
-                if (window.innerWidth > 992) $('.menuIcon').hide();  // 關掉menu
-                else $('.menuIcon-sm').hide();
-
-                $('html, body').stop().animate({  // scroll
-                    scrollTop: getTop
-                }, 500, 'easeInOutQuad', () => {
-                    $('html').css('overflow', 'hidden');
-                });
-
-                $('.indexTop span').hide()
+//         console.log(getWorkSubTitle);
 
 
-                // 跑馬燈 
-                for (let i = 0; i < 2; i++) {
-                    thisWorkBox.find('.indexHide').eq(i).append(`<div class="marquee ${(i == 0) ? 'marqueeTop' : 'marqueeBottom'}"><span class="marqueeItem">${getWorkTitle + getWorkSubTitle}</span></div>`)
-                    thisWorkBox.find('.marquee').eq(i).delay(500).animate({ 'opacity': 1 }, 1000)
-                }
+//         thisWorkBox.click(() => { // 點擊按鈕
+//             // indexOpenToggle(i)
+//             workList[i] = (!workList[i]);
 
-                const itemWidth = $('.marqueeItem').width() / 2 + 20
-                for (let i = window.innerWidth - itemWidth; i - itemWidth > 0; i -= itemWidth) {
-                    $('.marquee').append(`<span class="marqueeItem">${getWorkTitle + getWorkSubTitle}</span>`);
-                }
+//             let windowHeight = $(window).height()
+//             let h80vh = windowHeight * 0.8
+//             let getTop = thisWorkBox.offset().top;
 
-                nowWorks = getWorkTitle.replace(/\s+/g, '').replace("-", '').replace("&", '')
+//             if (!workList[i]) {  // close
+//                 indexClose(i)
+//                 HUDinit();  // 開啟HUD
+//                 setTimeout(()=>{
+//                     $('.hud').removeClass('hide');
+//                 },1000)
 
-                if ($('.test').length == 0) {
+//                 if (window.innerWidth > 992) $('.menuIcon').show();  // 開啟menu
+//                 else $('.menuIcon').show();
 
-                    $.get('./works.html', (e) => {
-                        $('.works').eq(i).append(e).css('opacity', 0)
-                        // slickInit('.test')
-                        $('.works').eq(i).delay(1000).animate({ 'opacity': 1 }, 1000)
-                    })
-                }
+//                 $('.indexTop span').show()
+
+//                 $('html, body').stop().animate({  // scroll
+//                     scrollTop: getTop - h80vh / 2
+//                     }, 500, 'easeInOutQuad', () => {
+//                         $('html').css('overflow', 'auto');
+//                     });
+//                 for (let i = 0; i < 2; i++) {
+//                     thisWorkBox.find('.marquee').eq(i).animate({ 'opacity': "0" }, 1000, () => {
+//                         thisWorkBox.find('.marquee').remove()
+//                     })
+//                 }
+
+//                 $('.works').animate({ 'opacity': 0 }, 1000, () => {
+//                     // $('.test').slick('unslick');
+//                     // $('.test').remove();
+//                     $('.slickBox').remove();
+//                 })
+
+//                 nowWorks = '';
+
+//             } else {  // open
+//                 indexOpen(i)
+//                 clearTimeout(timer);
+//                 $('.zoom').off('mouseenter').off('mouseleave')  // 關掉HUD事件
+//                 $('.left').eq(i).removeClass('animated fadeInUp faster').addClass('animated fadeOutUp faster');
+//                 $('.right').eq(i).removeClass('animated fadeInDown faster').addClass('animated fadeOutDown faster');
+//                 $('.hud').addClass('hide');
+
+//                 if (window.innerWidth > 992) $('.menuIcon').hide();  // 關掉menu
+//                 else $('.menuIcon-sm').hide();
+
+//                 $('html, body').stop().animate({  // scroll
+//                     scrollTop: getTop
+//                 }, 500, 'easeInOutQuad', () => {
+//                     $('html').css('overflow', 'hidden');
+//                 });
+
+//                 $('.indexTop span').hide()
+
+
+//                 // 跑馬燈 
+//                 for (let i = 0; i < 2; i++) {
+//                     thisWorkBox.find('.indexHide').eq(i).append(`<div class="marquee ${(i == 0) ? 'marqueeTop' : 'marqueeBottom'}"><span class="marqueeItem">${getWorkTitle + getWorkSubTitle}</span></div>`)
+//                     thisWorkBox.find('.marquee').eq(i).delay(500).animate({ 'opacity': 1 }, 1000)
+//                 }
+
+//                 const itemWidth = $('.marqueeItem').width() / 2 + 20
+//                 for (let i = window.innerWidth - itemWidth; i - itemWidth > 0; i -= itemWidth) {
+//                     $('.marquee').append(`<span class="marqueeItem">${getWorkTitle + getWorkSubTitle}</span>`);
+//                 }
+
+//                 nowWorks = getWorkTitle.replace(/\s+/g, '').replace("-", '').replace("&", '')
+
+//                 if ($('.test').length == 0) {
+
+//                     $.get('./works.html', (e) => {
+//                         $('.works').eq(i).append(e).css('opacity', 0)
+//                         // slickInit('.test')
+//                         $('.works').eq(i).delay(1000).animate({ 'opacity': 1 }, 1000)
+//                     })
+//                 }
                 
-            }
-        });
+//             }
+//         });
 
 
 
-        function indexOpen(index) {
-            $('.workBlock').eq(index).addClass('workBlockOpen')
-            $('.zoom').eq(index).addClass('zoomOpen')
-            $('.content').eq(index).addClass('contentOpen')
-            $('.line').addClass('lineOpen')
-            $('.workIndexTitle').addClass('workIndexTitleHide')
-            $('.indexTop').addClass('.indexTopClip')
-        }
+//         function indexOpen(index) {
+//             $('.workBlock').eq(index).addClass('workBlockOpen')
+//             $('.zoom').eq(index).addClass('zoomOpen')
+//             $('.content').eq(index).addClass('contentOpen')
+//             $('.line').addClass('lineOpen')
+//             $('.workIndexTitle').addClass('workIndexTitleHide')
+//             $('.indexTop').addClass('.indexTopClip')
+//         }
 
-        function indexClose(index) {
-            $('.workBlock').eq(index).removeClass('workBlockOpen')
-            $('.zoom').eq(index).removeClass('zoomOpen')
-            $('.content').eq(index).removeClass('contentOpen')
-            $('.line').removeClass('lineOpen')
-            $('.workIndexTitle').removeClass('workIndexTitleHide')
-            $('.indexTop').removeClass('.indexTopClip')
-        }
+//         function indexClose(index) {
+//             $('.workBlock').eq(index).removeClass('workBlockOpen')
+//             $('.zoom').eq(index).removeClass('zoomOpen')
+//             $('.content').eq(index).removeClass('contentOpen')
+//             $('.line').removeClass('lineOpen')
+//             $('.workIndexTitle').removeClass('workIndexTitleHide')
+//             $('.indexTop').removeClass('.indexTopClip')
+//         }
 
 
 
-        $('.content').click((e) => {
-            e.preventDefault();
-            e.stopPropagation();
-            console.log('stop');
-        })
+//         $('.content').click((e) => {
+//             e.preventDefault();
+//             e.stopPropagation();
+//             console.log('stop');
+//         })
 
-        // index hover
+//         // index hover
 
-    }
+//     }
 
-    let timer;
-    function HUDinit() {
-        for (let i = 0; i < $('.showWorkBox').length; i++) {
-            $('.zoom').eq(i).hover(() => {
-                $('.zoom').eq(i).find('.indexHide').addClass('font-lg')
-                timer = setTimeout(() => {
-                    $('.left').eq(i).removeClass('animated fadeOutUp faster').addClass('animated fadeInUp faster');
-                    $('.right').eq(i).removeClass('animated fadeOutDown faster').addClass('animated fadeInDown faster');
-                }, 300)
-            }, () => {
-                $('.zoom').eq(i).find('.indexHide').removeClass('font-lg')
-                clearTimeout(timer);
-                $('.left').eq(i).removeClass('animated fadeInUp faster').addClass('animated fadeOutUp faster');
-                $('.right').eq(i).removeClass('animated fadeInDown faster').addClass('animated fadeOutDown faster');
-            })
-            $(document).scroll(()=>{  // scoll event
-                if($('.left').attr('class')=="left animated fadeInUp faster") {
-                    $('.left').eq(i).removeClass('animated fadeInUp faster').addClass('animated fadeOutUp faster');
-                    $('.right').eq(i).removeClass('animated fadeInDown faster').addClass('animated fadeOutDown faster');
-                }
-            })
-        }
-    }
-    HUDinit();
+//     let timer;
+//     function HUDinit() {
+//         for (let i = 0; i < $('.showWorkBox').length; i++) {
+//             $('.zoom').eq(i).hover(() => {
+//                 $('.zoom').eq(i).find('.indexHide').addClass('font-lg')
+//                 timer = setTimeout(() => {
+//                     $('.left').eq(i).removeClass('animated fadeOutUp faster').addClass('animated fadeInUp faster');
+//                     $('.right').eq(i).removeClass('animated fadeOutDown faster').addClass('animated fadeInDown faster');
+//                 }, 300)
+//             }, () => {
+//                 $('.zoom').eq(i).find('.indexHide').removeClass('font-lg')
+//                 clearTimeout(timer);
+//                 $('.left').eq(i).removeClass('animated fadeInUp faster').addClass('animated fadeOutUp faster');
+//                 $('.right').eq(i).removeClass('animated fadeInDown faster').addClass('animated fadeOutDown faster');
+//             })
+//             $(document).scroll(()=>{  // scoll event
+//                 if($('.left').attr('class')=="left animated fadeInUp faster") {
+//                     $('.left').eq(i).removeClass('animated fadeInUp faster').addClass('animated fadeOutUp faster');
+//                     $('.right').eq(i).removeClass('animated fadeInDown faster').addClass('animated fadeOutDown faster');
+//                 }
+//             })
+//         }
+//     }
+//     HUDinit();
 
-})
+// })
 
 
 

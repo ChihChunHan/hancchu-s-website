@@ -1,6 +1,7 @@
 
 
 // intro preview
+
 const vh = window.innerHeight
 const li = $('.project li')
 const preview = $('.intro .preview')
@@ -16,7 +17,7 @@ li.mouseenter((e)=>{
     const target = $(e.target) ; 
     const liID = target.index('.project li'); // find nth li
     showPreview(target)
-    
+
     clearTimeout(timer)
     previewBox.children().fadeOut()
     timer = setTimeout(()=>{
@@ -81,21 +82,45 @@ $.get('worksData.json',{},(e)=>{
         }
     }
 
+    // work content show subtitle
+    let hoverCate
+
+    $('.workList a').hover((e)=>{
+        
+        const target = e.target
+        const getID = target.id
+        const getCate = $(target).parents(".indexItem")[0].dataset.index
+        const getWorks = list[getCate]
+        const getWork = getWorks[getID]
+        const getSubtitle = $(target).parents(".indexItem").find('.sub')
+        const getYear = getWork['year']
+        const getTitle = getWork['title']
+
+        getSubtitle.find('.work-title').text(getTitle)
+        getSubtitle.find('.work-year').text(getYear)
+        
+        hoverCate = getCate
+    },()=>{
+        const getSub = $(`.indexItem[data-index="${hoverCate}"]`).find('.sub')
+        getSub.children().text('')
+    })
+
     // modal
     $('.fireModal').click((e)=>{
         e.preventDefault()
         const target = e.target
-        const getID = target.parentNode.id
-        const getIndex = target.parentNode.parentNode.parentNode.dataset.index
-        const getWorks = list[getIndex]
+        const getID = target.id
+        const getCate = $(target).parents(".indexItem")[0].dataset.index
+        const getWorks = list[getCate]
         const getWork = getWorks[getID] ;
+        
         
 
         // img
 
         $('.modal').append(`
             <div class="modal-dialog modal-lg border-0" >
-                <div class="modal-content border-0" id="imgs" data-index="${getIndex}">
+                <div class="modal-content border-0" id="imgs" data-index="${getCate}">
                 </div>
             </div>
         `)
@@ -141,3 +166,4 @@ $.get('worksData.json',{},(e)=>{
 
 
 
+// 
