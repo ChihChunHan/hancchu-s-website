@@ -445,22 +445,20 @@
     background-color: transparent;
 }
 
-#imgs[data-index="Concert"] img,
-#imgs[data-index="3DModlerender"] img,
-#imgs[data-index="KeyVisual"] img,
-#imgs[data-index="EDMparty"] img{
+#imgs img{
     margin: 1rem;
     max-height: 90vh;
     max-width: 100%;
     object-fit: contain;
     /* box-shadow: 0px 4px 7px rgb(0,0,0,0.4); */
-    filter: drop-shadow(0px 7px 5px rgb(0,0,0,0.6));
+    filter: drop-shadow(0px 10px 10px rgb(0,0,0,0.3));
 }
 
 #imgs[data-index="WebLayout"] img{
     margin: 1rem;
+    max-height: none;
     width: 100%;
-    filter: drop-shadow(0px 4px 3px rgb(0,0,0,0.4));
+    filter: drop-shadow(0px 10px 10px rgb(0,0,0,0.3));
 }
 
 
