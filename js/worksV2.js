@@ -10,7 +10,18 @@ const txtEfct = $('.intro .txtEfct')
 const cateEfct = $('.intro .cateEfct')
 
 // init
-showPreview(li.eq(0))
+$('.preview').hide()
+$('.txtEfct').hide()
+$('.cateEfct').hide()
+if ($(window).width() > 992) {
+    setTimeout(()=>{
+        showPreview(li.eq(0))
+        $('.preview').show()
+        $('.txtEfct').show()
+        $('.cateEfct').show()
+    },500)
+}
+    
 let timer
 
 li.mouseenter((e)=>{
@@ -162,6 +173,11 @@ $.get('worksData.json',{},(e)=>{
             $('#work').children().remove();
         })
     })
+
+    // set img w=h
+    var cw = $('.indexItem .worksBlock .work img').width();
+    $('.indexItem .worksBlock .work img').css({'height':cw+'px'});
+
 })
 
 
