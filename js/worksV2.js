@@ -1,5 +1,6 @@
 
 
+
 // intro preview
 
 const vh = window.innerHeight
@@ -134,6 +135,7 @@ $.get('worksData.json',{},(e)=>{
                 <div class="modal-content border-0" id="imgs" data-index="${getCate}">
                 </div>
             </div>
+            <div class="title-tag"></div>
         `)
         for (let j = 0; j < getWork.imgs.length; j++) {
             $('#imgs').append(`
@@ -142,16 +144,18 @@ $.get('worksData.json',{},(e)=>{
             
         }
 
+        // title
+        $('.modal .title-tag').append(`<div class="workTitle">${getWork.title}</div>`)
+
         // tags
-        $('.modal').append(`<div class="tags"><ul></ul></div>`)
+        $('.modal .title-tag').append(`<div class="tags"><ul></ul></div>`)
         const tags = getWork.tags.split(" ")
         
         for (let k = 0; k < tags.length; k++) {
             $('.tags ul').append(`<li>${tags[k]}</li>`)
         }
 
-        // title
-        $('.modal').append(`<div class="workTitle">${getWork.title}</div>`)
+
         
         // close
         $('.modal').append(`
@@ -159,6 +163,10 @@ $.get('worksData.json',{},(e)=>{
                 <img src="./images/close-24px.svg" style="transform: scale(1.3);">
             </div>
         `)
+
+        $('.close').click(()=>{
+            $('#work').modal('hide')
+        })
 
         // id/count
         $('.modal').append(`        

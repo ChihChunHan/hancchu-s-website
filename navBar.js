@@ -134,9 +134,9 @@ $(document).ready(() => {
 
 })
 
-// side index
+// page scroll 
 $(document).ready(() => {
-    const screenH = window.innerHeight
+    const vh = window.innerHeight
     const worksTop = $('.workList').offset().top
     const contactsTop = $('#contacts').offset().top
 
@@ -145,10 +145,15 @@ $(document).ready(() => {
     const works = $('.workList .index')
     $(document).scroll(() => {
         let scrolled = window.scrollY
+        
+        // top scroll for more
+        if((vh-scrolled*2)/vh>0)$('.scroll').css('opacity',(vh-scrolled*2)/vh)
 
-        if (scrolled < screenH && intro.css('position')!='absolute') intro.css('position', 'absolute') 
+        // side index
 
-        if (scrolled > screenH && intro.css('position')!='fixed') {
+        if (scrolled < vh && intro.css('position')!='absolute') intro.css('position', 'absolute') 
+
+        if (scrolled > vh && intro.css('position')!='fixed') {
             intro.css({'position':'fixed','top': 0 })
         }
 
@@ -163,7 +168,6 @@ $(document).ready(() => {
             intro.hide()
         }
 
-        // if (scrolled > contactsTop && works.css('position')!='absolute') works.css('position', 'absolute')
     })
 })
 
