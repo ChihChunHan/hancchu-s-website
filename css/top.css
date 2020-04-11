@@ -47,7 +47,7 @@
 @media (max-width: 992px) {
     .top .list{
         margin-top: 2rem;
-        font-size: 0.4rem;
+        font-size: 14px;
         flex-direction: column;
         text-align: end;
     }
@@ -58,7 +58,7 @@
     }
 
     .top .list .cate span {
-        font-size: 0.2rem;
+        font-size: 8px;
         display: block;
     }
 }

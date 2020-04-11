@@ -99,6 +99,10 @@
 
 @media (max-width: 992px) { 
 
+    .intro .row {
+        margin-bottom: 3rem;
+    }
+
     .intro .title {
         font-size: 3rem;
         line-height: 2.5rem;
@@ -305,10 +309,11 @@
     .intro .project .col-lg-6:nth-of-type(even) .txt li {
         list-style: none;
         margin-bottom: -0.3rem;
-        font-size: 0.5rem;
-        letter-spacing: 0px;
+        font-size: 8px;
+        letter-spacing: 1px;
         height: 30px;
         line-height: 30px;
+        font-weight: 100;
     }
 
 }
