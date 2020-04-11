@@ -1,5 +1,6 @@
 .contacts {
     position: relative;
+    border-top: 1px dotted #555;
 }
 
 
@@ -70,6 +71,13 @@
 }
 
 @media (max-width: 992px) {
+    .contacts .container .designer {
+        margin: 10px 0;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
     
     .contacts .container .chi {
         padding-top: 1rem;
