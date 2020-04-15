@@ -78,7 +78,6 @@ function showPreview(liTarget) {
 
 // new work
 $.get('worksData.json',{},(e)=>{
-    console.log(e);
     const data = e ;
     const list = data.worksListData ;
     for (const index in list) {
