@@ -10,8 +10,22 @@
     z-index: 0;
 }
 
+.top.clip {
+    animation: clip 3s;
+}
+
+@keyframes clip {
+    0%{clip-path: circle(0);}
+    100%{clip-path: circle(100%);}
+}
+
 .top .title {
+    pointer-events: none;
     margin-top: 2rem;
+}
+
+.top .title svg{
+    pointer-events: none;
 }
 
 @media (max-width: 992px){

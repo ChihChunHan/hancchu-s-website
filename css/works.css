@@ -17,7 +17,6 @@
     position: relative;
     top: 0;
     transition: height 1s;
-    cursor: default;
 }
 
 .workList .workBlockOpen {
@@ -88,7 +87,6 @@
     opacity: 1;
     transition: opacity 1s;
     transition-delay: 0.5s;
-    cursor: pointer;
 }
 
 
@@ -326,7 +324,6 @@
 
 .pre,
 .next {
-    cursor: pointer;
     color: #000;
 }
 

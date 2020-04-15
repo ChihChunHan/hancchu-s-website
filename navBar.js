@@ -1,17 +1,24 @@
 var nowWorks
 
-var workCoverData = [
-    './images/cover/05-web.png',
-    './images/cover/04-webl.jpg',
-    './images/cover/03-3D.jpg',
-    './images/cover/02-EDM.jpg',
-    './images/cover/01-KV.png',
-    './images/cover/00-poster.jpg',
-]
-
 // // cursor tracer
-// $(document).mousemove(function (e) {
-//     $('.tail').css({ left: e.pageX, top: e.pageY })
+
+const $MT = $('.tail')
+$(document).mousemove(function (e) {
+    $MT.css({ left: e.clientX, top: e.clientY })
+})
+
+$('.top').hover(()=>{
+    $MT.addClass('lg invert')
+},()=>{
+    $MT.removeClass('lg invert')    
+})
+
+// $('.workList .worksBlock .fireModal').hover(()=>{
+//     console.log(1);
+    
+//     $MT.addClass('lg invert')
+// },()=>{
+//     $MT.removeClass('lg invert')    
 // })
 
 // rwd navBar
@@ -24,7 +31,7 @@ $(document).ready(() => {
     $('.closeIcon').hide();
 
     if (width == "lg") { // lg
-        $('.menuIcon').addClass('hide');
+
         $('.navBar').addClass('navBar_lg');
         $('.navBar').addClass('hide');
 
@@ -38,14 +45,10 @@ $(document).ready(() => {
         })
     }
     else {  // sm
-        if (window.scrollY < window.innerHeight) $('.menuIcon-sm').hide()  // 偵測scroll top是否超過100vh
         $('.navBar').addClass('hide')
         $('.navBar').addClass('navBar_sm')
 
-        $(document).scroll(() => {
-            if (window.scrollY > window.innerHeight) showMenuIcon_sm()
-            else $('.menuIcon-sm').hide()
-        })
+        showMenuIcon_sm()
     }
 
     //narbar resize
@@ -54,8 +57,6 @@ $(document).ready(() => {
         // 變小
         if (width == 'lg' && reWidth < 992) {
             navRemoveEvent();
-            $('.navBar').toggleClass('navBar_lg');
-            $('.navBar').toggleClass('navBar_sm')
             $('.menuIcon-sm').find('img')[0].src = (show == 1) ? 'images/close-24px.svg' : 'images/menu-24px.svg';
             if (show == 0) $('.navBar').addClass('hide')
             showMenuIcon_sm()
@@ -64,8 +65,6 @@ $(document).ready(() => {
         // 變大
         if (width == 'sm' && reWidth > 992) {
             navRemoveEvent();
-            $('.navBar').toggleClass('navBar_lg');
-            $('.navBar').toggleClass('navBar_sm')
             if (show == 1) {
                 $('.navBar').addClass('show');
                 $('.main').addClass('show');
@@ -79,14 +78,6 @@ $(document).ready(() => {
         $('.menuIcon-sm').off();
         $('.menuIcon').off();
         $('.navBar').off();
-    }
-
-    function showMenuIcon_lg() {  // 開啟選單  事件
-        $('.navBar').mouseleave(hideNavBar_lg)
-
-        $('.menuIcon').removeClass('hide').mouseenter(navBarShow).click(navBarShow);
-        
-        $('.menuIcon-sm').hide();
     }
 
     function navBarShow() {  // 開啟選單
@@ -112,16 +103,21 @@ $(document).ready(() => {
         show = (show == 0) ? 1 : 0
     }
 
+    function showMenuIcon_lg() {  // 開啟選單  事件
+        $('.navBar').mouseleave(hideNavBar_lg)
+
+        $('.menuIcon').removeClass('hide').mouseenter(navBarShow).click(navBarShow);
+        
+        // $('.menuIcon-sm').hide();
+    }
+
     function showMenuIcon_sm() {
-        $('.menuIcon').addClass('hide');
-        $('.menuIcon-sm').show();
         $('.menuIcon-sm').click(() => {
-            $('.navBar').toggleClass('navBarHide');
+            $('.navBar').toggleClass('hide');
             $('.menuIcon-sm').find('img')[0].src = (show == 0) ? 'images/close-24px.svg' : 'images/menu-24px.svg';
             show = (show === 0) ? 1 : 0
         });
     }
-
 
     $('.navBarItem').click((e) => {
         const id = e.target.hash;
@@ -170,179 +166,6 @@ $(document).ready(() => {
 
     })
 })
-
-// project preview
-// $(document).ready(()=>{
-//     $('.preview').hide()
-//     const lis = $('.project').find('li')
-//     const pres = $('.project').find('.preview')
-//     console.log(pres,lis);
-
-//     for (let i = 0; i < pres.length; i++) {
-//         lis.eq(i).hover(()=>{
-//             pres.eq(i).show()
-//         },()=>{
-//             pres.eq(i).hide()
-//         })
-        
-//     }
-    
-// })
-
-// work list
-// let workList = []
-// $(document).ready(() => {
-//     for (let i = 0; i < $('.showWorkBox').length; i++) {
-//         workList[i] = 0;
-//         let thisWorkBox = $('.showWorkBox').eq(i);
-//         let getWorkTitle = thisWorkBox.find('.indexBotton .workIndexTitle').text()
-//         let getWorkSubTitle = thisWorkBox.find('.indexTop .workIndexTitle div').text()
-
-//         console.log(getWorkSubTitle);
-
-
-//         thisWorkBox.click(() => { // 點擊按鈕
-//             // indexOpenToggle(i)
-//             workList[i] = (!workList[i]);
-
-//             let windowHeight = $(window).height()
-//             let h80vh = windowHeight * 0.8
-//             let getTop = thisWorkBox.offset().top;
-
-//             if (!workList[i]) {  // close
-//                 indexClose(i)
-//                 HUDinit();  // 開啟HUD
-//                 setTimeout(()=>{
-//                     $('.hud').removeClass('hide');
-//                 },1000)
-
-//                 if (window.innerWidth > 992) $('.menuIcon').show();  // 開啟menu
-//                 else $('.menuIcon').show();
-
-//                 $('.indexTop span').show()
-
-//                 $('html, body').stop().animate({  // scroll
-//                     scrollTop: getTop - h80vh / 2
-//                     }, 500, 'easeInOutQuad', () => {
-//                         $('html').css('overflow', 'auto');
-//                     });
-//                 for (let i = 0; i < 2; i++) {
-//                     thisWorkBox.find('.marquee').eq(i).animate({ 'opacity': "0" }, 1000, () => {
-//                         thisWorkBox.find('.marquee').remove()
-//                     })
-//                 }
-
-//                 $('.works').animate({ 'opacity': 0 }, 1000, () => {
-//                     // $('.test').slick('unslick');
-//                     // $('.test').remove();
-//                     $('.slickBox').remove();
-//                 })
-
-//                 nowWorks = '';
-
-//             } else {  // open
-//                 indexOpen(i)
-//                 clearTimeout(timer);
-//                 $('.zoom').off('mouseenter').off('mouseleave')  // 關掉HUD事件
-//                 $('.left').eq(i).removeClass('animated fadeInUp faster').addClass('animated fadeOutUp faster');
-//                 $('.right').eq(i).removeClass('animated fadeInDown faster').addClass('animated fadeOutDown faster');
-//                 $('.hud').addClass('hide');
-
-//                 if (window.innerWidth > 992) $('.menuIcon').hide();  // 關掉menu
-//                 else $('.menuIcon-sm').hide();
-
-//                 $('html, body').stop().animate({  // scroll
-//                     scrollTop: getTop
-//                 }, 500, 'easeInOutQuad', () => {
-//                     $('html').css('overflow', 'hidden');
-//                 });
-
-//                 $('.indexTop span').hide()
-
-
-//                 // 跑馬燈 
-//                 for (let i = 0; i < 2; i++) {
-//                     thisWorkBox.find('.indexHide').eq(i).append(`<div class="marquee ${(i == 0) ? 'marqueeTop' : 'marqueeBottom'}"><span class="marqueeItem">${getWorkTitle + getWorkSubTitle}</span></div>`)
-//                     thisWorkBox.find('.marquee').eq(i).delay(500).animate({ 'opacity': 1 }, 1000)
-//                 }
-
-//                 const itemWidth = $('.marqueeItem').width() / 2 + 20
-//                 for (let i = window.innerWidth - itemWidth; i - itemWidth > 0; i -= itemWidth) {
-//                     $('.marquee').append(`<span class="marqueeItem">${getWorkTitle + getWorkSubTitle}</span>`);
-//                 }
-
-//                 nowWorks = getWorkTitle.replace(/\s+/g, '').replace("-", '').replace("&", '')
-
-//                 if ($('.test').length == 0) {
-
-//                     $.get('./works.html', (e) => {
-//                         $('.works').eq(i).append(e).css('opacity', 0)
-//                         // slickInit('.test')
-//                         $('.works').eq(i).delay(1000).animate({ 'opacity': 1 }, 1000)
-//                     })
-//                 }
-                
-//             }
-//         });
-
-
-
-//         function indexOpen(index) {
-//             $('.workBlock').eq(index).addClass('workBlockOpen')
-//             $('.zoom').eq(index).addClass('zoomOpen')
-//             $('.content').eq(index).addClass('contentOpen')
-//             $('.line').addClass('lineOpen')
-//             $('.workIndexTitle').addClass('workIndexTitleHide')
-//             $('.indexTop').addClass('.indexTopClip')
-//         }
-
-//         function indexClose(index) {
-//             $('.workBlock').eq(index).removeClass('workBlockOpen')
-//             $('.zoom').eq(index).removeClass('zoomOpen')
-//             $('.content').eq(index).removeClass('contentOpen')
-//             $('.line').removeClass('lineOpen')
-//             $('.workIndexTitle').removeClass('workIndexTitleHide')
-//             $('.indexTop').removeClass('.indexTopClip')
-//         }
-
-
-
-//         $('.content').click((e) => {
-//             e.preventDefault();
-//             e.stopPropagation();
-//             console.log('stop');
-//         })
-
-//         // index hover
-
-//     }
-
-//     let timer;
-//     function HUDinit() {
-//         for (let i = 0; i < $('.showWorkBox').length; i++) {
-//             $('.zoom').eq(i).hover(() => {
-//                 $('.zoom').eq(i).find('.indexHide').addClass('font-lg')
-//                 timer = setTimeout(() => {
-//                     $('.left').eq(i).removeClass('animated fadeOutUp faster').addClass('animated fadeInUp faster');
-//                     $('.right').eq(i).removeClass('animated fadeOutDown faster').addClass('animated fadeInDown faster');
-//                 }, 300)
-//             }, () => {
-//                 $('.zoom').eq(i).find('.indexHide').removeClass('font-lg')
-//                 clearTimeout(timer);
-//                 $('.left').eq(i).removeClass('animated fadeInUp faster').addClass('animated fadeOutUp faster');
-//                 $('.right').eq(i).removeClass('animated fadeInDown faster').addClass('animated fadeOutDown faster');
-//             })
-//             $(document).scroll(()=>{  // scoll event
-//                 if($('.left').attr('class')=="left animated fadeInUp faster") {
-//                     $('.left').eq(i).removeClass('animated fadeInUp faster').addClass('animated fadeOutUp faster');
-//                     $('.right').eq(i).removeClass('animated fadeInDown faster').addClass('animated fadeOutDown faster');
-//                 }
-//             })
-//         }
-//     }
-//     HUDinit();
-
-// })
 
 
 

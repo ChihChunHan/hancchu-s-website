@@ -112,13 +112,21 @@ $.get('worksData.json',{},(e)=>{
         getSubtitle.find('.work-year').text(getYear)
         
         hoverCate = getCate
+
+        $MT.addClass('wk')
     },()=>{
         const getSub = $(`.indexItem[data-index="${hoverCate}"]`).find('.sub')
         getSub.children().text('')
+
+        $MT.removeClass('wk')  
     })
+
+    
+    
 
     // modal
     $('.fireModal').click((e)=>{
+        
         e.preventDefault()
         const target = e.target
         const getID = target.id
@@ -126,7 +134,14 @@ $.get('worksData.json',{},(e)=>{
         const getWorks = list[getCate]
         const getWork = getWorks[getID] ;
         
-        
+
+        let menu = $('.menuIcon');
+
+        if(!menu.is(":hidden")) menu.hide()
+        else {
+            menu = $('.menuIcon-sm')
+            menu.hide()
+        }
 
         // img
 
@@ -137,26 +152,58 @@ $.get('worksData.json',{},(e)=>{
             </div>
             <div class="title-tag"></div>
         `)
+
+        // let check = []
+
+        // for (let j = 0; j < getWork.imgs.length; j++) {
+
+        //     var img = new Image();
+        //     img.load(getWork.imgs[j]);
+        //     $('#imgs').append(img)
+            
+        //     check.push(img.completedPercentage) 
+
+        //     let precent = setInterval(() => {
+        //         check[j]=img.completedPercentage
+        //         if(img.completedPercentage==100){
+        //             clearInterval(precent)
+        //             check[j]='k'
+        //             console.log(check);
+        //         }
+        //     }, 100);
+            
+        // }
+
+
         for (let j = 0; j < getWork.imgs.length; j++) {
-            $('#imgs').append(`
-                <img src="${getWork.imgs[j]}">
-            `)
+
+            var img = new Image();
+            img.load(getWork.imgs[j]);
+            $('#imgs').append(img)
+            
+            console.log(img.completedPercentage);
+
+            if(j == getWork.imgs.length-1){
+                let precent = setInterval(() => {
+                    if(img.completedPercentage==100){
+                        clearInterval(precent)
+                        $('.modal').show()
+                    }
+                }, 100);
+            }
+
+
             
         }
-
+        
         // title
         $('.modal .title-tag').append(`<div class="workTitle">${getWork.title}</div>`)
-
         // tags
         $('.modal .title-tag').append(`<div class="tags"><ul></ul></div>`)
         const tags = getWork.tags.split(" ")
-        
         for (let k = 0; k < tags.length; k++) {
             $('.tags ul').append(`<li>${tags[k]}</li>`)
         }
-
-
-        
         // close
         $('.modal').append(`
             <div class="close">
@@ -167,7 +214,6 @@ $.get('worksData.json',{},(e)=>{
         $('.close').click(()=>{
             $('#work').modal('hide')
         })
-
         // id/count
         $('.modal').append(`        
             <div class="idNum">
@@ -176,11 +222,17 @@ $.get('worksData.json',{},(e)=>{
             </div>
         `)
 
+        $('.modal').hide()
+
         $('#work').modal()
-        $('#work').on('hidden.bs.modal', function (e) {
+        $('#work').on('hidden.bs.modal', function () {
             $('#work').children().remove();
+            if(menu.is(":hidden")) menu.show()
         })
+
     })
+
+
 
     // set img w=h
     var cw = $('.indexItem .worksBlock .work img').width();
@@ -188,6 +240,26 @@ $.get('worksData.json',{},(e)=>{
 
 })
 
+Image.prototype.load = function(url){
+    var thisImg = this;
+    var xmlHTTP = new XMLHttpRequest();
+    xmlHTTP.open('GET', url,true);
+    xmlHTTP.responseType = 'arraybuffer';
+    xmlHTTP.onload = function(e) {
+        var blob = new Blob([this.response]);
+        thisImg.src = window.URL.createObjectURL(blob);
+    };
+    xmlHTTP.onprogress = function(e) {
+        
+        thisImg.completedPercentage = parseInt((e.loaded / e.total) * 100);
+    };
+    xmlHTTP.onloadstart = function() {
+        thisImg.completedPercentage = 0;
+    };
+    xmlHTTP.send();
+};
 
+Image.prototype.completedPercentage = 0;
 
 // 
+
