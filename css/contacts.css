@@ -65,6 +65,22 @@
     border-bottom: 1px solid #555;
 }
 
+.contacts .container .URL {
+    margin-top: 20px;
+}
+.contacts .container .URL img {
+    transition: .2s;
+}
+.contacts .container .URL img:hover {
+    transform: translateY(-5px);
+}
+.contacts .container .URL img{
+    margin-right: 10px;
+    color: white;
+    width: 30px;
+    position: relative;
+}
+
 .contacts .container .right {
     font-size: 0.8rem;
     margin-top: 5rem;
@@ -89,7 +105,7 @@
         font-size: 0.5rem;
     }
 
-    .contacts .container img {
+    .contacts .container .designer img {
         width: 80vw;
         height: 170px;
         object-fit: cover;

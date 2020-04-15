@@ -4,12 +4,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="./bootstrap.min.css">
+    <title>HANCCHUN</title>
+    <!-- fav -->
+    <link rel="apple-touch-icon" sizes="180x180" href="favicon_io/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon_io/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon_io/favicon-16x16.png">
+    <link rel="manifest" href="favicon_io/site.webmanifest">
+
+    <link rel="stylesheet" href="css/bootstrap.min.css">
     <link
         href="https://fonts.googleapis.com/css?family=Montserrat:300i,800,800i|Noto+Sans+TC:100,300,400,500,700,900|Noto+Serif+TC:200,300,400,500,600,700,900&display=swap&subset=chinese-traditional"
         rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/navbar.css">
     <link rel="stylesheet" href="css/top.css">
     <link rel="stylesheet" href="css/intro.css">
@@ -19,9 +25,6 @@
     <!-- animation -->
     <link rel="stylesheet" href="css/animate.css">
 
-    <!-- slick -->
-    <!-- <link rel="stylesheet" type="text/css" href="slick/slick.css" />
-    <link rel="stylesheet" type="text/css" href="slick/slick-theme.css" /> -->
     <style>
 
     </style>
@@ -41,10 +44,14 @@
     <div class="navBar h-100 bg-dark text-light navBarHide">
         <img src="images/logo-single-fff.svg" alt="" srcset="">
         <div class="list">
-            <a href="#top" class="navBarItem">TOP</a>
-            <a href="#intro" class="navBarItem">INTRO</a>
-            <a href="#works" class="navBarItem">WORKS</a>
-            <a href="#contacts" class="navBarItem">CONTACTS</a>
+            <a href="#top" class="navBarItem">TOP 頁首</a>
+            <a href="#intro" class="navBarItem">INTRO 介紹</a>
+            <a href="#works" class="navBarItem">WORKS 作品</a>
+            <a href="#contacts" class="navBarItem">CONTACTS 找我</a>
+        </div>
+        <div class="URL">
+            <a href="https://github.com/ChihChunHan" target="_blank" ><img src="images/github-brands fff.svg" alt=""></a>
+            <a href="https://www.behance.net/frankhan09c670" target="_blank" ><img src="images/behance-square-brands fff.svg" alt=""></a>
         </div>
     </div>
     <div class="h-100 main w-100">
@@ -101,9 +108,9 @@
         <div class="top-bg h-100"></div>
         <div class="page">
             <div class="scroll">
-                
                 <div class="txt">SCROLL FOR MORE<span class="line"></span></div>
             </div>
+
             <!-- intro -->
             <div id="intro">
                 <div class="blink container" style="height: 15vh;"></div>
@@ -113,35 +120,35 @@
                         <div class="title">
                             <small>01</small>
                             <div class="txt">Event Visual Design</div>
-                            <div class="sub-title">活動視覺設計</div>
+                            <div class="sub-title" data-wow-delay="0.2s">活動視覺設計</div>
                         </div>
                         <div class="row p-3 mb-5">
-                            <div class="col-lg-4 col-12 p-0">
+                            <div class="col-lg-4 col-12 p-0" >
                                 <img src="images/intro/LPS_ARCADIA-ELROW_2018_0661.JPG">
                                 <div class="card-txt">EDM-party
                                     <small>電音派對活動</small>
                                 </div>
                             </div>
-                            <div class="col-lg-4 col-12 p-0">
+                            <div class="col-lg-4 col-12 p-0" data-wow-delay=".2s">
                                 <img src="images/intro/IMG_0418.jpg">
                                 <div class="card-txt">Physical activity
                                     <small>實體活動</small>
                                 </div>
                             </div>
-                            <div class="col-lg-4 col-12 p-0">
+                            <div class="col-lg-4 col-12 p-0" data-wow-delay=".4s">
                                 <img src="images/intro/IMG_0147.jpg">
                                 <div class="card-txt">Concert
                                     <small>演唱會</small>
                                 </div>
                             </div>
-                            <div class="txt">2017-19在娛樂產業設計執行了大大小小的活動，在與時間賽跑的過程中堅持產出有美感的設計。</div>
+                            <div class="txt" data-wow-delay=".6s">2017-19在娛樂產業設計執行了大大小小的活動，在與時間賽跑的過程中堅持產出有美感的設計。</div>
                         </div>
                         <div class="row p-3">
                             <div class="col-lg-9 col-12 p-0 ml-auto ">
                                 <div class="title ml-auto">
                                     <small>02</small>
-                                    3D Modle & Render
-                                    <div class="sub-title">3D空間繪圖設計</div>
+                                    <div>3D Modle & Render</div>
+                                    <div class="sub-title" data-wow-delay="0.2s">3D空間繪圖設計</div>
                                 </div>
                                 <div>
                                     <img src="images/intro/View 0_5.jpg">
@@ -154,19 +161,25 @@
                             <div class="col-lg-9 p-0 mr-auto">
                                 <div class="title">
                                     <small>03</small>
-                                    Web Front-end & Design
-                                    <div class="sub-title">網頁前端設計</div>
+                                    <div >
+                                        Web Front-end & Design
+                                    </div>
+                                    <div class="sub-title" data-wow-delay="0.2s">網頁前端設計</div>
                                 </div>
-                                <img src="images/intro/web-04-aclock.png">
-                                <div class="txt">對前端有著強烈學習興趣，喜歡研究視覺互動與視覺特效表現方式。藉由網頁前端試著表現出平面設計無法達成的互動關係。</div>
+                                <div >
+                                    <img src="images/intro/web-04-aclock.png">
+                                    <div class="txt">對前端有著強烈學習興趣，喜歡研究視覺互動與視覺特效表現方式。藉由網頁前端試著表現出平面設計無法達成的互動關係。</div>
+                                </div>
                             </div>
                         </div>
                         <div class="project row py-5">
                             <div class="col-auto w-100 d-flex flex-column justify-content-center">
                                 <div class="title mx-auto" style="display: inline-block;">
                                     <small>04</small>
-                                    Participate in the project
-                                    <div class="sub-title">參與大型專案</div>
+                                    <div>
+                                        Participate in the project
+                                    </div>
+                                    <div class="sub-title" data-wow-delay="0.2s">參與大型專案</div>
                                 </div>
                                 <div class="mx-auto wrap" >
                                     <div class="row">
@@ -412,6 +425,10 @@
                     </div>
                     <div class="email">chihchun.han@gmail.com</div>
                     <div class="phone">+886 918 518 051</div>
+                    <div class="URL">
+                        <a href="https://github.com/ChihChunHan" target="_blank" ><img src="images/github-brands.svg" alt=""></a>
+                        <a href="https://www.behance.net/frankhan09c670" target="_blank" ><img src="images/behance-square-brands.svg" alt=""></a>
+                    </div>
                     <div class="right">© hancchun all rights reserved.</div>
                 </div>
             </div>
@@ -430,112 +447,24 @@
         integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k"
         crossorigin="anonymous"></script>
 
-    <script src="jquery.easing.min.js"></script>
+    <script src="js/jquery.easing.min.js"></script>
 
     <script type="text/javascript" src="http://gsgd.co.uk/sandbox/jquery/easing/jquery.easing.1.3.js"></script>
-    <!-- slick -->
-    <!-- <script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
-    <script type="text/javascript" src="slick/slick.js"></script> -->
 
     <!-- particles -->
-    <script src="particles.js"></script>
+    <script src="js/particles.js"></script>
     <script src="js/app.js"></script>
+
+
 
     <!-- progressBarJs -->
     <script src="js/ProgressBarJs/progressbar.js"></script>
     <script src="js/ProgressBarJs/progressbar.min.js"></script>
+    <script src="js/loading.js"></script>
 
-    <script>
-        var bar = new ProgressBar.Line('#pregressbar', {
-        strokeWidth: 4,
-        easing: 'easeInOut',
-        duration: 1400,
-        color: '#555',
-        trailColor: '#eee',
-        trailWidth: 1,
-        svgStyle: {width: '100%', height: '100%'},
-        text: {
-            style: {
-            // Text color.
-            // Default: same as stroke color (options.color)
-            color: '#999',
-            position: 'absolute',
-            left: '50%',
-            top: '30px',
-            padding: 0,
-            margin: 0,
-            transform: 'translateX(-50%)'
-            },
-            autoStyleContainer: false
-        },
-        from: {color: '#333'},
-        to: {color: '#fff'},
-        step: (state, bar) => {
-            bar.setText(Math.round(bar.value() * 100) + ' %');
-            bar.path.setAttribute('stroke', state.color);
-        }
-        });
-
-        bar.animate(1.0,()=>{// Number from 0.0 to 1.0
-            // $('.loading').fadeOut(1000)
-            $('.loading').remove()
-            $('.top').addClass('clip')
-            // bar.destroy()
-            enableScroll()
-        });  
-
-        // left: 37, up: 38, right: 39, down: 40,
-        // spacebar: 32, pageup: 33, pagedown: 34, end: 35, home: 36
-        var keys = {37: 1, 38: 1, 39: 1, 40: 1};
-
-        function preventDefault(e) {
-        e.preventDefault();
-        }
-
-        function preventDefaultForScrollKeys(e) {
-        if (keys[e.keyCode]) {
-            preventDefault(e);
-            return false;
-        }
-        }
-
-        // modern Chrome requires { passive: false } when adding event
-        var supportsPassive = false;
-        try {
-        window.addEventListener("test", null, Object.defineProperty({}, 'passive', {
-            get: function () { supportsPassive = true; } 
-        }));
-        } catch(e) {}
-
-        var wheelOpt = supportsPassive ? { passive: false } : false;
-        var wheelEvent = 'onwheel' in document.createElement('div') ? 'wheel' : 'mousewheel';
-
-        // call this to Disable
-        function disableScroll() {
-        window.addEventListener('DOMMouseScroll', preventDefault, false); // older FF
-        window.addEventListener(wheelEvent, preventDefault, wheelOpt); // modern desktop
-        window.addEventListener('touchmove', preventDefault, wheelOpt); // mobile
-        window.addEventListener('keydown', preventDefaultForScrollKeys, false);
-        }
-
-        // call this to Enable
-        function enableScroll() {
-        window.removeEventListener('DOMMouseScroll', preventDefault, false);
-        window.removeEventListener(wheelEvent, preventDefault, wheelOpt); 
-        window.removeEventListener('touchmove', preventDefault, wheelOpt);
-        window.removeEventListener('keydown', preventDefaultForScrollKeys, false);
-        }
-        
-        disableScroll()
-        
-    </script>
-
-
-
-    <script src="scollpage.js"></script>
-    <script src="./worksListData.js"></script>
-    <script src="navBar.js"></script>
+    <script src="js/navBar.js"></script>
     <script src="js/worksV2.js"></script>
+
 </body>
 
 </html>

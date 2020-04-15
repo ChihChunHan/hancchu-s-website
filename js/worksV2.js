@@ -97,6 +97,8 @@ $.get('worksData.json',{},(e)=>{
     // work content show subtitle
     let hoverCate
 
+    const $MT = $('.tail')
+
     $('.workList a').hover((e)=>{
         
         const target = e.target
@@ -181,19 +183,16 @@ $.get('worksData.json',{},(e)=>{
             img.load(getWork.imgs[j]);
             $('#imgs').append(img)
             
-            console.log(img.completedPercentage);
+            // console.log(img.completedPercentage);
 
-            if(j == getWork.imgs.length-1){
-                let precent = setInterval(() => {
-                    if(img.completedPercentage==100){
-                        clearInterval(precent)
-                        $('.modal').show()
-                    }
-                }, 100);
-            }
-
-
-            
+            // if(j == getWork.imgs.length-1){
+            //     let precent = setInterval(() => {
+            //         if(img.completedPercentage==100){
+            //             clearInterval(precent)
+            //             $('.modal').show()
+            //         }
+            //     }, 100);
+            // }
         }
         
         // title
@@ -222,7 +221,7 @@ $.get('worksData.json',{},(e)=>{
             </div>
         `)
 
-        $('.modal').hide()
+        // $('.modal').hide()
 
         $('#work').modal()
         $('#work').on('hidden.bs.modal', function () {

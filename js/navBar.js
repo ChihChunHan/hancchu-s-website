@@ -1,25 +1,32 @@
 var nowWorks
 
 // // cursor tracer
-
-const $MT = $('.tail')
-$(document).mousemove(function (e) {
-    $MT.css({ left: e.clientX, top: e.clientY })
-})
-
-$('.top').hover(()=>{
-    $MT.addClass('lg invert')
-},()=>{
-    $MT.removeClass('lg invert')    
-})
-
-// $('.workList .worksBlock .fireModal').hover(()=>{
-//     console.log(1);
+if($(window).width() > 992){
+    const $MT = $('.tail')
+    $(document).mousemove(function (e) {
+        $MT.css({ left: e.clientX, top: e.clientY })
+    })
     
-//     $MT.addClass('lg invert')
-// },()=>{
-//     $MT.removeClass('lg invert')    
-// })
+    $('.top').hover(()=>{
+        $MT.addClass('lg invert')
+    },()=>{
+        $MT.removeClass('lg invert')    
+    })
+
+    $('.navBar').hover(()=>{
+        $MT.addClass('white')
+    },()=>{
+        $MT.removeClass('white')    
+    })
+
+    $('.navBar a').hover(()=>{
+        $MT.hide()
+    },()=>{
+        $MT.show()
+    })
+}else{
+    $('.tail').remove()
+}   
 
 // rwd navBar
 let show = 0;

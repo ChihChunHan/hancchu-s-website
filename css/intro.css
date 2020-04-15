@@ -172,7 +172,7 @@
     padding: 15px;
     background-color: #fff;
     left: 0%;
-    top: 50%;
+    top: 50%;   
     transform: translateX(-75%);
 }
 
@@ -397,6 +397,7 @@
     border: 1px solid #000;
     /* background: #000; */
     backdrop-filter: invert(1);
+    -webkit-backdrop-filter: invert(1);
     transition: top .3s, width .3s;
 }
 
@@ -411,6 +412,7 @@
     left: 0;
     /* background: #000; */
     backdrop-filter: invert(1);
+    -webkit-backdrop-filter: invert(1);
     transition: top .3s , width .3s;
 }
 

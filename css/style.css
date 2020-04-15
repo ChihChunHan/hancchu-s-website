@@ -53,6 +53,7 @@ body {
 
 .tail.invert {
     backdrop-filter: invert(100%); 
+    -webkit-backdrop-filter: invert(100%); 
 }
 
 .tail.lg {
@@ -70,6 +71,10 @@ body {
     /* background: #000; */
     background-image: url(images/clickme.svg);
     animation: spin 10s infinite linear;
+}
+
+.tail.white {
+    background: #fff;
 }
 
 @keyframes spin {

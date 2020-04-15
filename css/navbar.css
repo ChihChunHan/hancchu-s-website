@@ -46,7 +46,7 @@
     margin-top: 20px;
     border-bottom: 0px solid #fff;
     position: relative;
-    cursor: none;
+    cursor: pointer;
     font-weight: 300;
     letter-spacing: 0.1rem;
     font-size: 0.8rem;
@@ -93,6 +93,22 @@
         left: 0;
         width: 100%;
     }
+}
+
+.navBar .URL {
+    margin-top: 5rem;
+}
+.navBar .URL img {
+    transition: .2s;
+}
+.navBar .URL img:hover {
+    transform: translateY(-5px);
+}
+.navBar .URL img{
+    margin-right: 10px;
+    color: white;
+    width: 30px;
+    position: relative;
 }
 
 .menuIcon {
@@ -190,3 +206,4 @@
         left: 0px;
     }
 }
+
