@@ -1,5 +1,5 @@
 <template>
-  <div class="list">
+  <div class="list my-5">
     <div class="cate" v-for="item of listData" :key="item.title">
       {{item.title}}
       <span>{{item.sub}}</span>
@@ -32,8 +32,6 @@ export default {
 }
 
 .list .cate {
-    margin-right: 3rem;
-    margin-bottom: 1rem;
     line-height: 1.2rem;
     padding-left: 0.5rem;
     border-left: 3px solid #000;
