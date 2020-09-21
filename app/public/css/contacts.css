@@ -1,0 +1,123 @@
+.contacts {
+    position: relative;
+    border-top: 1px dotted #555;
+}
+
+
+.contacts .index {
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+.contacts .container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+
+.contacts .container .title {
+    color: #fff;
+    background-color: #555;
+    padding: 0 1rem;
+    font-weight: 100;
+    font-size: 1rem;
+    letter-spacing: 2px;
+}
+
+.contacts .container .designer {
+    margin:2rem;
+    padding: 3rem;
+}
+
+.contacts .container .name {
+    letter-spacing: 5px;
+    font-size: 1.5rem;
+    font-weight: 100;
+    display: flex;
+    flex-flow: column;
+    justify-content: space-around;
+}
+
+.contacts .container .chi {
+    padding-top: 9rem;
+    writing-mode: vertical-lr;
+}
+
+
+.contacts .container .eng {
+    padding-bottom: 9rem;
+    font-size: 1rem;
+}
+
+.contacts .container img {
+    width: 100%; 
+}
+
+.contacts .container .email,
+.contacts .container .phone {
+    margin-bottom: 1rem;
+    font-size: 1.2rem;
+    letter-spacing: 2px;
+    font-weight: 300;
+    border-bottom: 1px solid #555;
+}
+
+.contacts .container .URL {
+    margin-top: 20px;
+}
+.contacts .container .URL img {
+    transition: .2s;
+}
+.contacts .container .URL img:hover {
+    transform: translateY(-5px);
+}
+.contacts .container .URL img{
+    margin-right: 10px;
+    color: white;
+    width: 30px;
+    position: relative;
+}
+
+.contacts .container .right {
+    font-size: 0.8rem;
+    margin-top: 5rem;
+}
+
+@media (max-width: 992px) {
+    .contacts .container .designer {
+        margin: 10px 0;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    .contacts .container .chi {
+        padding-top: 1rem;
+        writing-mode: horizontal-tb;
+    }
+
+    .contacts .container .eng {
+        padding-bottom: 1rem;
+        font-size: 0.5rem;
+    }
+
+    .contacts .container .designer img {
+        width: 80vw;
+        height: 170px;
+        object-fit: cover;
+    }
+
+    .contacts .container .email,
+    .contacts .container .phone {
+        margin-bottom: 0.5rem;
+        font-size: 1rem;
+    }
+
+    .contacts .container .right {
+        margin-top: 2rem;
+    }
+}
