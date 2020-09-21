@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="logo">
     <svg
       version="1.1"
       xmlns="http://www.w3.org/2000/svg"
@@ -49,3 +49,9 @@ export default {
   name:"logoSvg"
 };
 </script>
+
+<style lang="scss" scoped>
+  .logo{
+    width: 90%;
+  }
+</style>
