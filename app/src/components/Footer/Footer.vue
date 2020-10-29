@@ -2,10 +2,10 @@
   <div
     id="contacts"
     class="contacts"
-    style="position: relative;background-color: #fff;z-index: 2;"
+    style="position: relative; background-color: #fff; z-index: 2"
   >
     <div class="index">Contacts</div>
-    <div class="container" style="height: 100vh;">
+    <div class="container" style="height: 100vh">
       <div class="title">designer</div>
       <div class="row designer">
         <div class="col-lg-9 col-auto p-0">
@@ -16,27 +16,35 @@
           <div class="eng">chih- chun, han</div>
         </div>
       </div>
-      <div class="email">chihchun.han@gmail.com</div>
-      <div class="phone">+886 918 518 051</div>
+      <div class="email">{{_staEmail}}</div>
+      <div class="phone">{{_staPhone}}</div>
       <div class="URL">
-        <a href="https://github.com/ChihChunHan" target="_blank">
-          <img src="images/github-brands.svg" alt />
+        <a :href="_staGithub" target="_blank">
+          <img src="images/github-brands.svg" />
         </a>
-        <a href="https://www.behance.net/frankhan09c670" target="_blank">
-          <img src="images/behance-square-brands.svg" alt />
+        <a :href="_staBehance" target="_blank">
+          <img src="images/behance-square-brands.svg" />
         </a>
       </div>
-      <div class="right">© hancchun all rights reserved.</div>
+      <div class="right">{{_staRight}}</div>
     </div>
   </div>
 </template>
 
 <script>
-  export default {
-    
-  }
+import { mapState } from "vuex";
+export default {
+  computed: {
+    ...mapState({
+      _staEmail: (state) => state.contacts.static.email,
+      _staPhone: (state) => state.contacts.static.phone,
+      _staGithub: (state) => state.contacts.static.github,
+      _staBehance: (state) => state.contacts.static.behance,
+      _staRight: (state) => state.contacts.static.right,
+    }),
+  },
+};
 </script>
 
 <style lang="scss" scoped>
-
 </style>

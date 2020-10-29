@@ -34,12 +34,11 @@ body::-webkit-scrollbar {
 body {
     -ms-overflow-style: none;
     overflow: auto;
-    cursor: none;
 }
 /* < 隱藏scoll-bar */
 
 .tail {
-    pointer-events:none;
+    /* pointer-events:none; */
     width: 10px;
     height: 10px;
     /* border: 10px solid #00f; */
